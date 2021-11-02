@@ -15,6 +15,7 @@ function transformGlobalLayout(data) {
     "inputCancelMessage",
     "inputSaveMessage",
     "clickToOpenText",
+    "curatedGiftUrl",
   ];
   const mediaKeys = [
     "favicon16x16",

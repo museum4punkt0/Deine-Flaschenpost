@@ -180,7 +180,7 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ curatedGiftId, content }) => {
         <LineSpacer color={content.textColor} />
 
         <OpenMuseumGift>
-          <Link href={`/gift/${curatedGiftId}`}>
+          <Link href={globalLayout.curatedGiftUrl}>
             <a onClick={() => events.track(hGiftsOpenMuseumGiftPressedEvent())}>
               <OpenMuseumGiftSvg>
                 <SvgGift colour="black" />

@@ -59,7 +59,7 @@ const HomeNewGift: React.FC<Props> = ({ curatedGiftId, texts }) => {
           {texts.createGiftText}
         </ButtonLink>
 
-        <ButtonLink onClick={handleOpenGift} to={`/gift/${curatedGiftId}`}>
+        <ButtonLink onClick={handleOpenGift} to={globalLayout.curatedGiftUrl}>
           {texts.openGiftText}
         </ButtonLink>
       </PanelButtons>
