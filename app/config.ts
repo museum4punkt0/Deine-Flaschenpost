@@ -74,7 +74,7 @@ function readAsString(val?: string): string {
 
 function readOrThrow(val?: string): string {
   if (val === undefined || val.trim() === "") {
-    throw new ConfigError(`Required value missing: ${name}`);
+    throw new ConfigError(`Required value missing`);
   }
 
   return val.trim();
