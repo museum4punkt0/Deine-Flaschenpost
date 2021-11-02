@@ -1,64 +1,34 @@
-## Commands to know about
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-### `yarn install`
+## Getting Started
 
-Gives you what you need
+First, run the development server:
 
-### `yarn start-app`
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-Runs the main React App in development mode
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### `yarn start-storybook`
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-Runs the storybook in development mode
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
 
-### `yarn build-app` and `yarn build-storybook`
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-Bundle the app / storybook for release.
+## Learn More
 
-### `yarn lint`
+To learn more about Next.js, take a look at the following resources:
 
-Runs the linter. If the code doesn't lint correctly it will fail in CI. When you
-want the linter to automatically fix boring errors, you can do `yarn lint
---fix`. Also, feel free to update the linting rules in `tslint.json` if they're
-too lame.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### `yarn typecheck`
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-Runs the typechecker. If the code doesn't typecheck correctly it will fail in
-CI.
+## Deploy on Vercel
 
-### `yarn cleanup`
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-This is automatically run before the parcel steps. It removes the parcel cache
-and build folder. It's a bit lame but prevents wasting time when you can't work
-out why changes to your environment variables aren't getting picked up...
-
-## Development flow
-
-Make sure your code always lints and typechecks correctly. Because we want a
-very fast UI development feedback loop the `yarn start-app` / `yarn
-start-storybook` commands do not do typechecking/linting. So it's recommended to
-always have the linting / typechecking running on file-changes in seperate
-processes.  E.g. in a couple of terminal panes run:
-
-    yarn typecheck --watch
-
-and (if you happen to use `entr`, which is an excellent tool)
-
-    while true; do find src stories | entr -d yarn lint; done
-
-Make sure you regularly check this output.
-
-Alternatively, your editor may be able to help with that kind of thing.
-
-## SVGs
-
-SVGR is used to convert .svg files into React components: https://github.com/smooth-code/svgr
-
-We use a custom template to ensure Typescript compatibility.
-Options are set in app/.svgrrc.js
-
-From the app folder run
-
-    npx @svgr/cli ./src/assets/svg/button-audio-play.svg > ./src/components/svg/play.tsx
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
