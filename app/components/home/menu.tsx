@@ -5,6 +5,7 @@ import Link from "next/link";
 import { global, slideDownMenu } from "../../themes/global";
 import { TextResize } from "../text-resize";
 import SvgArrowUp from "../svg/arrow-up";
+import { useRouter } from "next/router";
 
 /***
  * Global menu
@@ -121,6 +122,8 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = (props) => {
+  const router = useRouter();
+
   // State
   const [menuOpenedClass, setMenuOpenedClass] = useState(""); // Class used to determine opened state
 
@@ -145,7 +148,15 @@ const Menu: React.FC<MenuProps> = (props) => {
     <MenuWrap className={menuOpenedClass} onClick={handleCloseClick}>
       <MenuStyle className={menuOpenedClass}>
         <Link href="/">
-          <MenuItem onClick={handleCloseClick}>Start</MenuItem>
+          <MenuItem
+            onClick={() => {
+              if (router.pathname == "/") {
+                router.reload();
+              }
+            }}
+          >
+            Start
+          </MenuItem>
         </Link>
         {props.menuItems.map((menuItem) => {
           if (menuItem.itemType === "richtext") {
