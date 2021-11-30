@@ -1,6 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
-
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Textfit } from "react-textfit";
@@ -30,7 +27,6 @@ import { HomeGifts } from "../components/home/home-gifts";
 import { FeedbackModal } from "../components/modals/feedback-modal";
 
 import { BackgroundSvg } from "../components/background-svg";
-import { BackgroundSvgNoLogo } from "../components/background-svg-no-logo";
 import {
   getHasSeenHomeIntro,
   setHasSeenHomeIntro,

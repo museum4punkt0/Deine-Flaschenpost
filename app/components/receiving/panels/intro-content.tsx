@@ -1,17 +1,11 @@
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
-import { assetStore } from "../../../services";
-
 import { Panel, PanelContent } from "../../panel";
 import { PanelButtons } from "../../panel-buttons";
 import { Button } from "../../buttons";
 import { AudioPlayer } from "../../media/audio-player";
 import { AudioTranscription } from "../../media/audio-transcription";
-import { RIntroContentLocalMuseumTranscription } from "../../audio-transcription/r-intro-content-local-museum";
-import { RIntroContentLocalPersonalTranscription } from "../../audio-transcription/r-intro-content-local-personal";
-import { RIntroContentRemoteMuseumTranscription } from "../../audio-transcription/r-intro-content-remote-museum";
-import { RIntroContentRemotePersonalTranscription } from "../../audio-transcription/r-intro-content-remote-personal";
 import { RecipientLocation } from "../../choose-location";
 import { Gift } from "../../../domain";
 

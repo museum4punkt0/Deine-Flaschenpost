@@ -12,10 +12,8 @@ import { setHasUnopenedMuseumGift } from "../../utils/local";
 
 import { Panel, PanelContent } from "../panel";
 import { PanelPrompt } from "../panel-prompt";
-import { PanelText } from "../panel-text";
 import { PanelButtons } from "../panel-buttons";
 import { ButtonLink } from "../buttons";
-import SvgGift from "../svg/gift";
 import { TextResize } from "../text-resize";
 
 /**

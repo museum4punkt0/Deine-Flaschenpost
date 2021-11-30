@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import menu from "../globals/menu";
 import globalLayout from "../globals/layout";
-import { global } from "../themes/global";
 import { getUserHasAgreedTerms, setUserHasAgreedTerms } from "../utils/local";
 
 import { ScreenTitle } from "./screen-title";
@@ -17,9 +16,6 @@ import { Gradient } from "./gradient";
 import { Menu, MenuBurger } from "./home/menu";
 import { HeaderCloseButton } from "./home/header-close-button";
 import { TermsModal } from "./modals/terms-modal";
-import { HelpContent } from "./information/help";
-import { TermsContent } from "./information/terms";
-import { ImprintContent } from "./information/imprint";
 
 /**
  * Global screen header

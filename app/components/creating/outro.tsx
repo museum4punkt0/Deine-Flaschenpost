@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useRouter } from "next/router";
 
-import { assetStore } from "../../services";
-
 import { Panel, PanelContent } from "../panel";
 import { PanelButtons } from "../panel-buttons";
 import { Button } from "../buttons";
 import { AudioPlayer } from "../media/audio-player";
 import { AudioTranscription } from "../media/audio-transcription";
-import { CShareTranscript } from "../audio-transcription/c-share";
 import { InProgressGift } from "../../domain";
 
 import { events } from "../../services";

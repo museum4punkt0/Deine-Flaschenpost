@@ -2,7 +2,6 @@ import React from "react";
 
 import { Panel, PanelContent } from "../panel";
 import { PanelPrompt } from "../panel-prompt";
-import { Buttons } from "../buttons";
 import { WaitThen } from "../utils/wait-then";
 
 /**

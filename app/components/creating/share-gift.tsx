@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import { global } from "../../themes/global";
 import { isIosDevice } from "../../utils/helpers";
-import { museum } from "../../data";
 
 import { Panel, PanelContent } from "../panel";
 import { PanelTitle } from "../panel-title";

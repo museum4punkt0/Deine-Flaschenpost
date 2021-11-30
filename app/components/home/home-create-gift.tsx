@@ -13,7 +13,6 @@ import { Panel, PanelContent } from "../panel";
 import { PanelPrompt } from "../panel-prompt";
 import { PanelButtons } from "../panel-buttons";
 import { Button, ButtonLink } from "../buttons";
-import SvgGift from "../svg/gift";
 
 /**
  * Component that allows the user to create a gift from the home sequence

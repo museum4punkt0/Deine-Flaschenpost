@@ -7,7 +7,6 @@ import { global, fadeInUp } from "../../themes/global";
 import { Panel, PanelContent } from "../panel";
 import { PanelRound } from "../panel-round";
 import { TextResize } from "./../text-resize";
-import SvgGift from "../svg/gift";
 
 /**
  * Open gift

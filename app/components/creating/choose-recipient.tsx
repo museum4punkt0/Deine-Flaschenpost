@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
-import { assetStore } from "../../services";
-
 import { Panel, PanelContent } from "../panel";
 import { PanelButtons } from "../panel-buttons";
 import { Button } from "../buttons";
 import { AudioPlayer } from "../media/audio-player";
 import { AudioTranscription } from "../media/audio-transcription";
-import { CStartGiftTranscript } from "../audio-transcription/c-start-gift";
 import { TextInputModal } from "../modals/text-input-modal";
 
 /**

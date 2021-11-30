@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
-import { museum } from "../../data";
 import { global, slideDownMenu } from "../../themes/global";
 import { TextResize } from "../text-resize";
 import SvgArrowUp from "../svg/arrow-up";

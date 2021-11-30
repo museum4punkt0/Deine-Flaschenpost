@@ -9,7 +9,6 @@ import {
 } from "../../event-definitions";
 
 import globalLayout from "../../globals/layout";
-import { museum } from "../../data";
 import { global } from "../../themes/global";
 import { getSessionRecipientLocation } from "../../utils/local";
 

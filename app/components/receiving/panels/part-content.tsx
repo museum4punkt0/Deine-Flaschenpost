@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
-import { assetStore } from "../../../services";
 import { events } from "../../../services";
 import {
   rPartCluePressedEvent,
@@ -23,10 +22,6 @@ import { PanelButtons } from "../../panel-buttons";
 import { Button } from "../../buttons";
 import { AudioPlayer } from "../../media/audio-player";
 import { AudioTranscription } from "../../media/audio-transcription";
-import { ROutroRemotePersonalTranscript } from "../../audio-transcription/r-outro-remote-personal";
-import { ROutroRemoteMuseumTranscript } from "../../audio-transcription/r-outro-remote-museum";
-import { ROutroLocalPersonalTranscript } from "../../audio-transcription/r-outro-local-personal";
-import { ROutroLocalMuseumTranscript } from "../../audio-transcription/r-outro-local-museum";
 import { RecipientLocation } from "../../choose-location";
 import { Gift, GiftPart } from "../../../domain";
 import { WaitThen, WaitThenShow } from "../../utils/wait-then";
