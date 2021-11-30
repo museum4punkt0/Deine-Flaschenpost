@@ -1,5 +1,3 @@
-import { museum } from "../data";
-
 /**
  * An AssetStore is responsible for holding urls for all assets needed
  * throughout the app. It provides an interface to preload all the assets --
@@ -17,7 +15,7 @@ export class AssetStore {
    * As assets are preloaded, the urls in here will be altered to browser local
    * ObjectUrls.
    */
-  public assets = { ...museum.assets };
+  public assets = {};
 
   // For now we're not clever enough to run more than once and handle failures,
   // so we use this to ensure preload() is only called once.
