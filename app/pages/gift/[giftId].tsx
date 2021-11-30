@@ -24,9 +24,10 @@ export async function getStaticProps({ params }) {
 
   const { giftId } = params;
   try {
-    let gift = await api.getGift(giftId);
-    if (gift.kind !== "ok") {
-      gift = null;
+    let giftResponse = await api.getGift(giftId);
+    let gift = null;
+    if (giftResponse.kind == "ok") {
+      gift = giftResponse.data;
     }
 
     const screenReceiveGiftGlobal = await fetchScreenContent(
