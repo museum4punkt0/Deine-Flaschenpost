@@ -49,6 +49,9 @@ export async function getStaticProps({ params }) {
   const menuItems = await fetchMenuItems();
 
   const { giftId } = params;
+
+  const statusContent = await fetchScreenContent("screen-receive-gift-status");
+
   try {
     let gift = await fetchMuseumGift(giftId);
     if (Object.keys(gift).length) gift = processFetchedGift(gift);
@@ -82,6 +85,7 @@ export async function getStaticProps({ params }) {
           openOrSave: screenOpenOrSave,
           chooseLocation: screenChooseLocation,
           parts: screenParts,
+          status: statusContent,
         },
       },
       revalidate: 300,
@@ -92,6 +96,9 @@ export async function getStaticProps({ params }) {
       props: {
         globalLayout: globalLayout,
         menuItems: menuItems,
+        content: {
+          status: statusContent,
+        },
       },
       revalidate: 300,
     };
@@ -109,13 +116,11 @@ const ReceiveGiftScreen: React.FC<Props> = ({ gift, content }) => {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <WorkingProgress text="Lade dein Geschenk..." percent={0} />;
+    return <WorkingProgress text="Lade..." percent={0} />;
   }
 
   if (!Object.keys(gift).length) {
-    return (
-      <ErrorMessage message="Wir konnten dein Geschenk leider nicht auf unserem Server finden." />
-    );
+    return <ErrorMessage message={content.status.notFoundMessage} />;
   }
 
   return <ReceiveGift gift={gift} content={content} />;
