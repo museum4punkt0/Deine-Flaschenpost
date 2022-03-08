@@ -35,7 +35,7 @@ const Buttons = styled.div`
   }
 `;
 
-type ButtonColour = "white" | "black" | "grey";
+type ButtonColour = "white" | "black" | "grey" | "light-grey";
 
 /**
  * Shared Button styles, for both Button and ButtonLink
@@ -49,6 +49,8 @@ const buttonStyles = css<ButtonProps>`
       ? "rgba(0, 0, 0, 0.7)"
       : props.colour === "grey"
       ? "rgba(50, 50, 50, 0.7)"
+      : props.colour === "light-grey"
+      ? "rgba(150, 150, 150, 0.7)"
       : null};
   line-height: 1;
   margin: 0;

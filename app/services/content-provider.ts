@@ -16,6 +16,10 @@ function transformGlobalLayout(data) {
     "inputSaveMessage",
     "clickToOpenText",
     "curatedGiftUrl",
+    "termsModalTitle",
+    "termsModalText",
+    "termsModalReadButtonText",
+    "termsModalAgreeButtonText",
   ];
   const mediaKeys = [
     "favicon16x16",
@@ -78,9 +82,11 @@ export async function fetchGlobalLayout() {
 
 function transformMenuItems(data) {
   let menuItems = data.menuItemZone;
+  let termsItemName = data.termsItemName;
   return menuItems.map((menuItem) => ({
     itemType:
       menuItem.__component == "menu.richtext-menu-item" ? "richtext" : "link",
+    isTerms: menuItem.name === termsItemName,
     ...menuItem,
   }));
 }

@@ -1,12 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { global } from '../../themes/global';
-import { ModalDialogOuter } from './base-modal-dialog';
-import { Button, Buttons } from '../buttons';
-import { TextResize } from '../text-resize';
+import globalLayout from "../../globals/layout";
+import { global } from "../../themes/global";
+import { ModalDialogOuter } from "./base-modal-dialog";
+import { Button, Buttons } from "../buttons";
+import { TextResize } from "../text-resize";
 
-import { museum } from '../../data';
+import { museum } from "../../data";
 
 /**
  * Terms & privacy modal
@@ -51,57 +52,32 @@ interface Props {
   onShowTerms: () => void; // Callback when the show terms button is clicked
 }
 
-// tslint:disable max-line-length
-const DemoContent: React.FC = () => (
-  <>
-    <TopText textSize={40}>Dein Geschenk im Badischen Landesmuseum
-    </TopText>
-
-    <MainText textSize={35}>
-      Das Badische Landesmuseum speichert und verarbeitet deine Daten, um diesen Dienst anzubieten und zu verbessern. Wir werden persönliche Informationen ohne deine Zustimmung nicht an Dritte weitergeben. Bitte stimme zu, um fortzufahren. Wenn du mehr wissen willst:
-    </MainText>
-  </>
-);
-// tslint:enable max-line-length
-
-const StandardContent: React.FC = () => (
-  <>
-    <TopText textSize={35}>Dein Geschenk im Badischen Landesmuseum
-    </TopText>
-
-    <MainText textSize={35}>
-      Das Badische Landesmuseum speichert und verarbeitet deine Daten, um diesen Dienst anzubieten und zu verbessern. Wir werden persönliche Informationen ohne deine Zustimmung nicht an Dritte weitergeben. Bitte stimme zu, um fortzufahren. Wenn du mehr wissen willst:
-    </MainText>
-  </>
-);
-
-
 const TermsModal: React.FC<Props> = ({ onAgreeClick, onShowTerms }) => {
-  const innerContent = (museum.slug === 'demo') ? (<DemoContent />) : (<StandardContent />);
-
   return (
     <ModalDialogOuter>
       <Inner>
-
         <Texts>
-          {innerContent}
+          <>
+            <TopText textSize={35}>{globalLayout.termsModalTitle}</TopText>
+
+            <MainText textSize={35}>{globalLayout.termsModalText}</MainText>
+          </>
 
           <TermsButton onClick={onShowTerms}>
-            <TextResize textSize={40}>Lies unsere Nutzungsbedingungen &amp; Datenschutzerklärung</TextResize>
+            <TextResize textSize={40}>
+              {globalLayout.termsModalReadButtonText}
+            </TextResize>
           </TermsButton>
-
         </Texts>
 
         <Buttons>
-          <Button onClick={onAgreeClick} colour='grey'>Zustimmen und fortfahren</Button>
+          <Button onClick={onAgreeClick} colour="light-grey">
+            {globalLayout.termsModalAgreeButtonText}
+          </Button>
         </Buttons>
-
       </Inner>
     </ModalDialogOuter>
   );
-
 };
 
-export {
-  TermsModal,
-};
+export { TermsModal };

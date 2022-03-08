@@ -244,7 +244,11 @@ const ScreenHeader: React.FC<Props> = (props: Props) => {
         <TermsModal
           onAgreeClick={handleAgreeTerms}
           onShowTerms={() => {
-            setPrivacyIsOpen(true);
+            menu.items.map((menuItem, index) => {
+              if (menuItem.isTerms) {
+                setMenuItemOpen(index, true);
+              }
+            });
           }}
         />
       )}
