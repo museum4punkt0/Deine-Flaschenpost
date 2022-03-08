@@ -1,14 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { global } from '../themes/global';
-import { ProgressBar } from '../components/progress-bar';
-
-import SvgGift from './svg/gift';
+import { global } from "../themes/global";
+import { ProgressBar } from "../components/progress-bar";
 
 interface Props {
   text: string;
-  colourTheme: 'white' | 'light-grey';
+  colourTheme: "white" | "light-grey";
   percent?: number;
 }
 
@@ -23,10 +21,14 @@ const StyledProgressLoader = styled.div<Props>`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  ${(props) => props.colourTheme === 'white' && `
+  ${(props) =>
+    props.colourTheme === "white" &&
+    `
     color: ${global.colour.whiteText};
   `}
-  ${(props) => props.colourTheme === 'light-grey' && `
+  ${(props) =>
+    props.colourTheme === "light-grey" &&
+    `
     color: ${global.colour.lightGrey};
   `}
 `;
@@ -41,31 +43,28 @@ const GiftIcon = styled.div`
 `;
 
 const ProgressLoader: React.FC<Props> = (props) => {
-
   // Progress bar theme
-  const theme = props.colourTheme === 'white' ? 'white-on-black' : 'grey-on-black';
+  const theme =
+    props.colourTheme === "white" ? "white-on-black" : "grey-on-black";
 
   // Gift SVG colour
-  const colour = props.colourTheme === 'white' ? global.colour.whiteText : global.colour.lightGrey;
+  const colour =
+    props.colourTheme === "white"
+      ? global.colour.whiteText
+      : global.colour.lightGrey;
 
   return (
     <StyledProgressLoader {...props}>
-      <GiftIcon>
-        <SvgGift colour={colour} />
-      </GiftIcon>
       <ProgressTitle>{props.text}</ProgressTitle>
 
-      { props.percent !== undefined && (
-          <>
-            <ProgressBar percent={props.percent} theme={theme} height='0.1rem' />
-            <ProgressTitle>{props.percent}%</ProgressTitle>
-          </>
+      {props.percent !== undefined && (
+        <>
+          <ProgressBar percent={props.percent} theme={theme} height="0.1rem" />
+          <ProgressTitle>{props.percent}%</ProgressTitle>
+        </>
       )}
     </StyledProgressLoader>
   );
-
 };
 
-export {
-  ProgressLoader,
-};
+export { ProgressLoader };

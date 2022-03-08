@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
+import globalLayout from "../../globals/layout";
 import { GlobalStyles } from "../../themes/global";
 import { Buttons, ButtonAnchor, ButtonLink } from "../buttons";
 import { ScreenMessage } from "./screen-message";
 import { ScreenManager } from "../screen-manager";
 import { TextResize } from "../text-resize";
+import { BackgroundSvg } from "../../components/background-svg";
 
 /**
  * Error Message component

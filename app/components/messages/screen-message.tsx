@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { global } from '../../themes/global';
-import { TextResize } from '../text-resize';
-import SvgGift from '../svg/gift';
+import { global } from "../../themes/global";
+import { TextResize } from "../text-resize";
+import SvgGift from "../svg/gift";
 
 /**
  *
@@ -44,29 +44,17 @@ interface Props {
 }
 
 const ScreenMessage: React.FC<Props> = ({ message, children }) => {
-
   return (
     <Outer>
       <Inner>
-
         <Content>
-
-          <GiftImg>
-            <SvgGift colour='grey' />
-          </GiftImg>
-
           {message && <TextResize>{message}</TextResize>}
 
           {children}
-
         </Content>
-
       </Inner>
     </Outer>
   );
-
 };
 
-export {
-  ScreenMessage,
-};
+export { ScreenMessage };
