@@ -239,7 +239,12 @@ const HomeScreen: React.FC<Props> = (props) => {
 
         {/* Content */}
         {status === "intro1" && !termsAccepted && (
-          <HomeIntro1 texts={props.screenHomeIntro1} />
+          <HomeIntro1
+            onComplete={() => {
+              setStatus("intro2");
+            }}
+            texts={props.screenHomeIntro1}
+          />
         )}
         {status === "intro1" && termsAccepted && (
           <HomeIntro1

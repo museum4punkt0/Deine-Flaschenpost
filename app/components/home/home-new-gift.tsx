@@ -45,8 +45,8 @@ const HomeNewGift: React.FC<Props> = ({ curatedGiftId, texts }) => {
   return (
     <Panel>
       <PanelContent topPosition="top-quarter">
-        <PanelPrompt textColor="black" background="solid-white">
-          <TextResize textSize={70}>
+        <PanelPrompt background="solid-white">
+          <TextResize textSize={70} style={{ color: globalLayout.promptColor }}>
             {texts.giftReceivedText + globalLayout.museumName}
           </TextResize>
         </PanelPrompt>
