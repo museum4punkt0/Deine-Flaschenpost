@@ -41,11 +41,11 @@ const ErrorMessage: React.FC<Props> = ({ message }) => {
         </ErrorTextResize>
 
         <DeviceButtons>
-          <ButtonLink colour="black" to="/">
+          <ButtonLink colour="white" to="/">
             Abbrechen
           </ButtonLink>
           <ButtonAnchor
-            colour="black"
+            colour="white"
             href={typeof window !== "undefined" ? window.location.href : ""}
           >
             Nochmal versuchen
