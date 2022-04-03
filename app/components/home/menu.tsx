@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
+import globalLayout from "../../globals/layout";
 import { global, slideDownMenu } from "../../themes/global";
 import { TextResize } from "../text-resize";
 import SvgArrowUp from "../svg/arrow-up";
@@ -42,7 +43,7 @@ const MenuBurger: React.FC<MenuBurgerProps> = ({ onClick }) => (
 // Menu item
 const MenuItemStyle = styled.button`
   padding: 6% 0;
-  color: ${global.colour.lightGreyText};
+  color: ${(props) => props.textColor};
   display: block;
   width: 100%;
   font-family: ${global.fonts.title.family};
@@ -69,7 +70,7 @@ interface MenuItemProps {
 }
 
 const MenuItem: React.FC<MenuItemProps> = (props) => (
-  <MenuItemStyle onClick={props.onClick}>
+  <MenuItemStyle onClick={props.onClick} textColor={globalLayout.promptColor}>
     <TextResize textSize={80}>{props.children}</TextResize>
   </MenuItemStyle>
 );
