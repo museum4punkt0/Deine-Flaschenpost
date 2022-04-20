@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import ReactMarkdown from "react-markdown";
 import { useRouter } from "next/router";
 
 import { Panel, PanelContent } from "../panel";
+import { PanelPrompt } from "../panel-prompt";
 import { PanelButtons } from "../panel-buttons";
 import { Button } from "../buttons";
-import { AudioPlayer } from "../media/audio-player";
-import { AudioTranscription } from "../media/audio-transcription";
 import { InProgressGift } from "../../domain";
 
 import { events } from "../../services";
@@ -22,9 +20,6 @@ export interface Props {
 }
 
 const CreatingOutro: React.FC<Props> = ({ gift, content }) => {
-  // State
-  const [audioPlaybackFinished, setAudioPlaybackFinished] = useState(false);
-
   const router = useRouter();
 
   function handleContinue() {
@@ -36,29 +31,19 @@ const CreatingOutro: React.FC<Props> = ({ gift, content }) => {
 
   return (
     <Panel>
-      <AudioTranscription giftId={gift.id} audioReference={"c-outro"}>
-        <ReactMarkdown>{content.audioTranscript}</ReactMarkdown>
-      </AudioTranscription>
-
       <PanelContent>
-        <AudioPlayer
-          message={content.audioMessage}
-          src={content.audio}
-          forwardButtonType={"go-to-end"}
-          giftId={gift.id}
-          audioReference={"c-outro"}
-          onPlaybackComplete={() => {
-            setAudioPlaybackFinished(true);
-          }}
+        <PanelPrompt
+          text={content.thanksMessage}
+          textSize={50}
+          background="transparent-black"
+          onClick={handleContinue}
         />
       </PanelContent>
 
       <PanelButtons>
-        {audioPlaybackFinished && (
-          <Button primary={true} onClick={handleContinue}>
-            {content.doneButtonText}
-          </Button>
-        )}
+        <Button primary={true} onClick={handleContinue}>
+          {content.doneButtonText}
+        </Button>
       </PanelButtons>
     </Panel>
   );

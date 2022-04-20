@@ -39,11 +39,7 @@ export const CreateGiftIntro: React.FC<Props> = ({ onComplete, texts }) => {
             textSize={50}
             background="transparent-black"
             onClick={() => setStatus("second-message")}
-          >
-            <GiftImg>
-              <SvgGift colour="white" />
-            </GiftImg>
-          </PanelPrompt>
+          ></PanelPrompt>
 
           <WaitThen
             wait={defaultWait}
