@@ -1,20 +1,24 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import Image from "next/image";
 
-import { LocalFile } from '../../domain';
+import globalLayout from "../../globals/layout";
 
-import { setImageOrientation,
+import { LocalFile } from "../../domain";
+
+import {
+  setImageOrientation,
   getImageOrientation,
   calcImageOrientationChange,
   landscapeImageOrientation,
   resizeImage,
-} from '../../utils/image';
+} from "../../utils/image";
 
-import { fadeInUp } from '../../themes/global';
-import { PanelText } from '../panel-text';
-import { PanelRound } from '../panel-round';
-import { BaseControlButton } from '../buttons';
-import SvgIconCamera from '../svg/icon-camera';
+import { fadeInUp } from "../../themes/global";
+import { PanelText } from "../panel-text";
+import { PanelRound } from "../panel-round";
+import { BaseControlButton } from "../buttons";
+import SvgIconCamera from "../svg/icon-camera";
 
 /**
  * Capture photo from users camera
@@ -53,7 +57,10 @@ const ImageInput = styled.input`
 
 // Buttons
 const CaptureButton = styled(BaseControlButton)`
-  width: 30%;
+  width: 35%;
+  height: 0;
+  padding-bottom: 35%;
+  position: relative;
 `;
 
 interface Props {
@@ -63,20 +70,17 @@ interface Props {
 }
 
 class PhotoCapture extends React.PureComponent<Props> {
-
   // Show the camera to the user
   public showCamera = () => {
-
     // Trigger the input element
-    const input = document.getElementById('photo-capture-input'); // todo, improve
+    const input = document.getElementById("photo-capture-input"); // todo, improve
     if (input) {
       input.click();
     }
-  }
+  };
 
   // Handle the change of file on the input
   public handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-
     // Nothing to do if we don't have anyone listening
     if (!this.props.onPhotoTaken) return;
 
@@ -95,46 +99,66 @@ class PhotoCapture extends React.PureComponent<Props> {
     // Some pictures will be landscape and will need converting to portrait
     // Get the current orientation and correct if necessary
     getImageOrientation(imageFile, (orientation) => {
-
-      if (orientation === landscapeImageOrientation) { // Landscape
+      if (orientation === landscapeImageOrientation) {
+        // Landscape
         const change = calcImageOrientationChange(orientation);
 
         setImageOrientation(imageUrl, change, (rotatedImageUrl) => {
           URL.revokeObjectURL(imageUrl); // Cleanup unused resource
 
           // Resize the image to ensure a usable size
-          resizeImage(rotatedImageUrl, targetImgHeight, targetImgHeight, (resizedImageUrl) =>  {
-            onPhotoTaken({ url: resizedImageUrl, mimeType });
-          });
-
+          resizeImage(
+            rotatedImageUrl,
+            targetImgHeight,
+            targetImgHeight,
+            (resizedImageUrl) => {
+              onPhotoTaken({ url: resizedImageUrl, mimeType });
+            }
+          );
         });
       } else {
         // Resize the image to ensure a usable size
-        resizeImage(imageUrl, targetImgHeight, targetImgHeight, (resizedImageUrl) =>  {
-          onPhotoTaken({ url: resizedImageUrl, mimeType });
-        });
+        resizeImage(
+          imageUrl,
+          targetImgHeight,
+          targetImgHeight,
+          (resizedImageUrl) => {
+            onPhotoTaken({ url: resizedImageUrl, mimeType });
+          }
+        );
       }
     });
-  }
+  };
 
   public render() {
-
     return (
-      <PanelRound background={'transparent-black'}>
+      <PanelRound background={"transparent-black"}>
         <PhotoCaptureStyle>
           {/* support line breaks */}
           <PhotoCaptureText textSize={this.props.textSize}>
-            {this.props.text && this.props.text.split('\n').map((item) => {
-              return <>{item}<br /></>;
-            })}
+            {this.props.text &&
+              this.props.text.split("\n").map((item) => {
+                return (
+                  <>
+                    {item}
+                    <br />
+                  </>
+                );
+              })}
           </PhotoCaptureText>
           <Controls>
             <CaptureButton>
-              <SvgIconCamera onClick={this.showCamera} />
+              <Image
+                src={globalLayout.cameraIcon}
+                alt="Flaschenpost"
+                layout="fill"
+                objectFit="contain"
+                onClick={this.showCamera}
+              />
               <ImageInput
-                id='photo-capture-input'
-                type='file'
-                accept='image/*'
+                id="photo-capture-input"
+                type="file"
+                accept="image/*"
                 onChange={this.handleChange}
               />
             </CaptureButton>
@@ -142,11 +166,7 @@ class PhotoCapture extends React.PureComponent<Props> {
         </PhotoCaptureStyle>
       </PanelRound>
     );
-
   }
-
 }
 
-export {
-  PhotoCapture,
-};
+export { PhotoCapture };
