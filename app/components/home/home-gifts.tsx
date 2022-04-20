@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
+
+import menu from "../../globals/menu";
 
 import { events } from "../../services";
 import {
@@ -34,22 +38,31 @@ const HeaderMessage = styled.div`
 
 const HeaderMessageTextResize = styled(TextResize)`
   line-height: 1.2;
+  margin: 2% auto 2%;
 `;
 
 const OpenMuseumGift = styled.div`
   text-align: center;
+  margin: 2% auto 2%;
 `;
 const OpenMuseumGiftSvg = styled.div`
-  margin: 15% auto 1%;
-  width: 30%;
+  margin: 2% auto 2%;
+  width: 100%;
+  height: 0;
+  padding-bottom: 30%;
+  position: relative;
+  cursor: pointer;
 `;
 const FeedbackSvg = styled.div`
-  margin: 15% auto 1%;
-  width: 30%;
+  margin: 2% auto 2%;
+  width: 100%;
+  height: 0;
+  padding-bottom: 70%;
+  position: relative;
+  cursor: pointer;
 `;
 const OpenYourGift = styled.div`
   line-height: 1.3;
-  margin-bottom: 18%;
 `;
 const OpenYourGiftText = styled(TextResize)`
   margin: 0 auto;
@@ -63,8 +76,11 @@ const FeedbackText = styled(TextResize)`
 `;
 
 const PlusStyle = styled.div`
-  margin: 4% auto 0;
-  width: 30%;
+  margin: 0% auto 2%;
+  width: 100%;
+  height: 0;
+  padding-bottom: 30%;
+  position: relative;
   cursor: pointer;
 `;
 
@@ -109,7 +125,7 @@ const SectionTitle = styled(PanelTitle)`
 `;
 
 const FeedbackSection = styled.div`
-  margin: 7vh 0 7vh;
+  margin: 4% auto 5%;
 `;
 
 /**
@@ -127,6 +143,14 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ curatedGiftId, content }) => {
 
   // Prep for render
   const atMuseum = getSessionRecipientLocation() === "at-museum";
+
+  let helpText = "";
+  menu.items.map((menuItem) => {
+    if (menuItem.isHelp) {
+      helpText = menuItem.text;
+    }
+  });
+
   return (
     <>
       {helpIsOpen && (
@@ -135,7 +159,7 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ curatedGiftId, content }) => {
             setHelpIsOpen(false);
           }}
         >
-          <HelpContent />
+          <ReactMarkdown>{helpText}</ReactMarkdown>
         </InformationWindow>
       )}
 
@@ -154,20 +178,22 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ curatedGiftId, content }) => {
             <TextResize textSize={42}>{content.readMoreText}</TextResize>
           </ReadMoreLink>
         </HeaderMessage>
-
         <LineSpacer color={content.textColor} />
-
         {!atMuseum && (
           <SectionTitle textSize={42}>
             Wenn du jetzt im Museum bist...
           </SectionTitle>
         )}
-
         <GiftsNotSent>
           <Link href="/create-gift">
             <a onClick={() => events.track(hGiftsCreatePressedEvent())}>
               <PlusStyle>
-                <SvgAddCircle />
+                <Image
+                  src={content.addImage}
+                  alt="Flaschenpost erstellen"
+                  layout="fill"
+                  objectFit="contain"
+                />
               </PlusStyle>
               <CreateAGiftOfYourOwn textSize={42}>
                 {content.addText}
@@ -175,14 +201,17 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ curatedGiftId, content }) => {
             </a>
           </Link>
         </GiftsNotSent>
-
         <LineSpacer color={content.textColor} />
-
         <OpenMuseumGift>
           <Link href={globalLayout.curatedGiftUrl}>
             <a onClick={() => events.track(hGiftsOpenMuseumGiftPressedEvent())}>
               <OpenMuseumGiftSvg>
-                <SvgGift colour="black" />
+                <Image
+                  src={content.openMuseumGiftImage}
+                  alt="Museumsflaschenpost öffnen"
+                  layout="fill"
+                  objectFit="contain"
+                />
               </OpenMuseumGiftSvg>
 
               <OpenYourGift>
@@ -193,14 +222,18 @@ const HomeGifts: React.FC<HomeGiftProps> = ({ curatedGiftId, content }) => {
             </a>
           </Link>
         </OpenMuseumGift>
-
         <LineSpacer color={content.textColor} />
 
         <FeedbackSection>
           <ReadMoreLink color={content.textColor}>
             <a href={content.feedbackUrl} target="_blank" rel="noreferrer">
               <FeedbackSvg>
-                <SvgFeedback colour="black" />
+                <Image
+                  src={content.feedbackImage}
+                  alt="Feedback geben"
+                  layout="fill"
+                  objectFit="contain"
+                />
               </FeedbackSvg>
               <FeedbackText textSize={50}>{content.feedbackText}</FeedbackText>
             </a>
