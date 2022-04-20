@@ -20,6 +20,7 @@ function transformGlobalLayout(data) {
     "termsModalText",
     "termsModalReadButtonText",
     "termsModalAgreeButtonText",
+    "termsUrl",
   ];
   const mediaKeys = [
     "favicon16x16",
@@ -34,6 +35,11 @@ function transformGlobalLayout(data) {
     "repeatButtonIcon",
     "skipButtonIcon",
     "transcriptionIcon",
+    "cameraIcon",
+    "smsIcon",
+    "mailIcon",
+    "whatsappIcon",
+    "messengerIcon",
   ];
   const colorKeys = ["titleColor", "promptColor"];
 
@@ -82,11 +88,11 @@ export async function fetchGlobalLayout() {
 
 function transformMenuItems(data) {
   let menuItems = data.menuItemZone;
-  let termsItemName = data.termsItemName;
+  let helpTextTitle = data.helpTextTitle;
   return menuItems.map((menuItem) => ({
     itemType:
       menuItem.__component == "menu.richtext-menu-item" ? "richtext" : "link",
-    isTerms: menuItem.name === termsItemName,
+    isHelp: menuItem.name === helpTextTitle,
     ...menuItem,
   }));
 }

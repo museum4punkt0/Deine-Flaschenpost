@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
 import globalLayout from "../../globals/layout";
 import { global, fadeInUp } from "../../themes/global";
@@ -13,12 +14,15 @@ import { TextResize } from "./../text-resize";
  */
 
 const GiftImage = styled.div`
-  width: 70%;
-  margin: 7% auto 0;
+  width: 60%;
+  height: 60%;
+  position: relative;
+  margin: 0% auto 10%;
 `;
 
 const OpenPanel = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -30,7 +34,6 @@ const OpenPanel = styled.div`
 const OpenTextStyle = styled(TextResize).attrs({
   textSize: 60,
 })`
-  font-style: italic;
   font-family: ${global.fonts.title.family};
   position: relative;
   top: -5%; // nudge up because of svg spacing
@@ -58,11 +61,14 @@ export const ReceivingOpenGift: React.FC<Props> = ({ onComplete, content }) => {
           onClick={onComplete}
         >
           <OpenPanel>
-            {/* TODO?
             <GiftImage>
-              <SvgGift colour="black" />
+              <Image
+                src={content.giftIcon}
+                alt="Flaschenpost"
+                layout="fill"
+                objectFit="contain"
+              />
             </GiftImage>
-              */}
             <OpenText>{content.openButtonText}</OpenText>
           </OpenPanel>
         </PanelRound>

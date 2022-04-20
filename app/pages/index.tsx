@@ -6,6 +6,7 @@ import {
   fetchGlobalLayout,
   fetchMenuItems,
   fetchScreenTexts,
+  fetchScreenContent,
 } from "../services/content-provider";
 import { config } from "../config";
 import globalLayout from "../globals/layout";
@@ -312,7 +313,7 @@ export async function getStaticProps(context) {
   const screenHomeIntro1 = await fetchScreenTexts("screen-home-intro-1");
   const screenHomeIntro2 = await fetchScreenTexts("screen-home-intro-2");
   const screenHomeNewGift = await fetchScreenTexts("screen-home-new-gift");
-  const screenHomeMore = await fetchScreenTexts("screen-home-more");
+  const screenHomeMore = await fetchScreenContent("screen-home-more");
   return {
     props: {
       globalLayout: globalLayout,
