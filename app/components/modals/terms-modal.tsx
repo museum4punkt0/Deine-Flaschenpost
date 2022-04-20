@@ -49,10 +49,9 @@ const TermsButton = styled.button`
 
 interface Props {
   onAgreeClick: () => void; // Callback when the agree button is clicked
-  onShowTerms: () => void; // Callback when the show terms button is clicked
 }
 
-const TermsModal: React.FC<Props> = ({ onAgreeClick, onShowTerms }) => {
+const TermsModal: React.FC<Props> = ({ onAgreeClick }) => {
   return (
     <ModalDialogOuter>
       <Inner>
@@ -63,11 +62,13 @@ const TermsModal: React.FC<Props> = ({ onAgreeClick, onShowTerms }) => {
             <MainText textSize={35}>{globalLayout.termsModalText}</MainText>
           </>
 
-          <TermsButton onClick={onShowTerms}>
-            <TextResize textSize={40}>
-              {globalLayout.termsModalReadButtonText}
-            </TextResize>
-          </TermsButton>
+          <a href={globalLayout.termsUrl}>
+            <TermsButton onClick={() => {}}>
+              <TextResize textSize={40}>
+                {globalLayout.termsModalReadButtonText}
+              </TextResize>
+            </TermsButton>
+          </a>
         </Texts>
 
         <Buttons>

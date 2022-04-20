@@ -240,18 +240,7 @@ const ScreenHeader: React.FC<Props> = (props: Props) => {
       })}
 
       {/* == Terms == */}
-      {termsModalIsOpen && (
-        <TermsModal
-          onAgreeClick={handleAgreeTerms}
-          onShowTerms={() => {
-            menu.items.map((menuItem, index) => {
-              if (menuItem.isTerms) {
-                setMenuItemOpen(index, true);
-              }
-            });
-          }}
-        />
-      )}
+      {termsModalIsOpen && <TermsModal onAgreeClick={handleAgreeTerms} />}
     </>
   );
 };
