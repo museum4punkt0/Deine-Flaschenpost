@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Image from "next/image";
+
+import globalLayout from "../../globals/layout";
 
 import { global } from "../../themes/global";
 import { isIosDevice } from "../../utils/helpers";
@@ -40,7 +43,7 @@ const ShareLinkStyle = styled.a`
   background-color: rgba(255, 255, 255, 0.7);
   position: relative;
   z-index: 1;
-  padding: 3vw 3vw;
+  padding: 2rem 2rem;
   border-radius: ${global.borderRadius};
   width: 100%;
   text-align: center;
@@ -48,20 +51,18 @@ const ShareLinkStyle = styled.a`
 `;
 
 const ShareLinkIcon = styled.div`
-  width: 15%;
-  height: auto;
-  opacity: 0.7;
-  svg {
-    /* hack to prevent cutoff on iPhone7 */
-    width: 99%;
-  }
+  width: 30%;
+  position: relative;
+  height: 0;
+  padding-bottom: 20%;
+  margin-left: 5%;
 `;
 
 const ShareLinkText = styled.div`
   width: 100%;
   font-family: ${global.fonts.title.family};
   font-weight: ${global.fonts.title.normal};
-  font-style: italic;
+  color: ${(props) => props.textColor};
 `;
 
 const ShareLinkArrow = styled.div`
@@ -93,12 +94,9 @@ export const ShareLink: React.FC<ShareLinkProps> = ({
       onClick={onClick}
     >
       <ShareLinkIcon>{icon}</ShareLinkIcon>
-      <ShareLinkText>
+      <ShareLinkText textColor={globalLayout.promptColor}>
         <TextResize textSize={50}>{text}</TextResize>
       </ShareLinkText>
-      <ShareLinkArrow>
-        <SvgArrowForward />
-      </ShareLinkArrow>
     </ShareLinkStyle>
   );
 };
@@ -169,21 +167,42 @@ export const ShareGift: React.FC<ShareGiftProps> = ({
           <ShareLink
             url={smsLink}
             text="SMS"
-            icon={<SvgIconSms />}
+            icon={
+              <Image
+                src={globalLayout.smsIcon}
+                alt="SMS"
+                layout="fill"
+                objectFit="contain"
+              />
+            }
             onClick={() => onChannelClicked("sms")}
           />
 
           <ShareLink
             url={emailLink}
-            text="Email"
-            icon={<SvgIconEmail />}
+            text="E-Mail"
+            icon={
+              <Image
+                src={globalLayout.mailIcon}
+                alt="Mail"
+                layout="fill"
+                objectFit="contain"
+              />
+            }
             onClick={() => onChannelClicked("email")}
           />
 
           <ShareLink
             url={whatsAppsLink}
             text="WhatsApp"
-            icon={<SvgIconWhatsApp />}
+            icon={
+              <Image
+                src={globalLayout.whatsappIcon}
+                alt="WhatsApp"
+                layout="fill"
+                objectFit="contain"
+              />
+            }
             dataAction="share/whatsapp/share"
             onClick={() => onChannelClicked("whatsapp")}
           />
@@ -191,16 +210,21 @@ export const ShareGift: React.FC<ShareGiftProps> = ({
           <ShareLink
             url={fbMessengerLink}
             text="Messenger"
-            icon={<SvgIconMessenger />}
+            icon={
+              <Image
+                src={globalLayout.messengerIcon}
+                alt="Messenger"
+                layout="fill"
+                objectFit="contain"
+              />
+            }
             onClick={() => onChannelClicked("messenger")}
           />
         </Shares>
       </SharesContent>
 
       <PanelButtons>
-        <Button onClick={onComplete} colour={"black"}>
-          {content.continueButtonText}
-        </Button>
+        <Button onClick={onComplete}>{content.continueButtonText}</Button>
       </PanelButtons>
     </Panel>
   );
