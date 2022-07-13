@@ -43,7 +43,10 @@ const ShareLinkStyle = styled.a`
   background-color: rgba(255, 255, 255, 0.7);
   position: relative;
   z-index: 1;
-  padding: 2rem 2rem;
+  @media (max-width: 375px) {
+    padding: 1px 1px;
+  }
+  padding: 8px 8px;
   border-radius: ${global.borderRadius};
   width: 100%;
   text-align: center;
@@ -51,10 +54,18 @@ const ShareLinkStyle = styled.a`
 `;
 
 const ShareLinkIcon = styled.div`
-  width: 30%;
+  @media (max-width: 1440px) {
+    width: 80px;
+    padding-bottom: 3rem;
+  }
+  @media (max-width: 375px) {
+    width: 20%;
+    padding-bottom: 20%;
+  }
+  width: 25%;
+  padding-bottom: 17.5%;
   position: relative;
   height: 0;
-  padding-bottom: 20%;
   margin-left: 5%;
 `;
 
