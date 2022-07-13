@@ -63,6 +63,7 @@ const MainTitleContainer = styled.div`
   margin-top: 3rem;
   position: relative;
   color: white;
+  padding: 0 10px;
 `;
 
 export const MuseumName = styled(TextResize).attrs({
