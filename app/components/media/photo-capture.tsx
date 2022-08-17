@@ -2,17 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
+import loadImage from "blueimp-load-image";
+
 import globalLayout from "../../globals/layout";
 
 import { LocalFile } from "../../domain";
-
-import {
-  setImageOrientation,
-  getImageOrientation,
-  calcImageOrientationChange,
-  landscapeImageOrientation,
-  resizeImage,
-} from "../../utils/image";
 
 import { fadeInUp } from "../../themes/global";
 import { PanelText } from "../panel-text";
@@ -96,38 +90,19 @@ class PhotoCapture extends React.PureComponent<Props> {
 
     const targetImgHeight = 1024;
 
-    // Some pictures will be landscape and will need converting to portrait
-    // Get the current orientation and correct if necessary
-    getImageOrientation(imageFile, (orientation) => {
-      if (orientation === landscapeImageOrientation) {
-        // Landscape
-        const change = calcImageOrientationChange(orientation);
-
-        setImageOrientation(imageUrl, change, (rotatedImageUrl) => {
-          URL.revokeObjectURL(imageUrl); // Cleanup unused resource
-
-          // Resize the image to ensure a usable size
-          resizeImage(
-            rotatedImageUrl,
-            targetImgHeight,
-            targetImgHeight,
-            (resizedImageUrl) => {
-              onPhotoTaken({ url: resizedImageUrl, mimeType });
-            }
-          );
-        });
-      } else {
-        // Resize the image to ensure a usable size
-        resizeImage(
-          imageUrl,
-          targetImgHeight,
-          targetImgHeight,
-          (resizedImageUrl) => {
-            onPhotoTaken({ url: resizedImageUrl, mimeType });
-          }
+    loadImage(
+      imageFile,
+      function (img) {
+        img.toBlob(
+          (blob) => {
+            onPhotoTaken({ url: URL.createObjectURL(blob), mimeType });
+          },
+          "image/jpeg",
+          0.8
         );
-      }
-    });
+      },
+      { minHeight: targetImgHeight, maxHeight: targetImgHeight, canvas: true }
+    );
   };
 
   public render() {
