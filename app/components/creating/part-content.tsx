@@ -1,3 +1,5 @@
+import menu from "../../globals/menu";
+
 import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 
@@ -109,6 +111,13 @@ export const CreatingPartContent: React.FC<Props> = ({
       content[key] = content[key].replace("${recipientName}", recipientName);
     }
   }
+
+  let helpText = "";
+  menu.items.map((menuItem) => {
+    if (menuItem.isHelp) {
+      helpText = menuItem.text;
+    }
+  });
 
   // 1 | 2 | 3
   const partNumber = giftPartIndex + 1;
@@ -688,7 +697,7 @@ export const CreatingPartContent: React.FC<Props> = ({
             setHelpIsOpen(false);
           }}
         >
-          <HelpContent />
+          <ReactMarkdown>{helpText}</ReactMarkdown>
         </InformationWindow>
       )}
 
