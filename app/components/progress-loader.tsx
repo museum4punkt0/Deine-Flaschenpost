@@ -35,6 +35,9 @@ const StyledProgressLoader = styled.div<Props>`
 
 const ProgressTitle = styled.div`
   text-align: center;
+  @media (max-height: 500px) {
+    font-size: 2.5vw;
+  }
 `;
 
 const GiftIcon = styled.div`

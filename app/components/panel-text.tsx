@@ -18,6 +18,15 @@ const PanelTextStyle = styled(TextResize).attrs<Props>((props) => ({
   padding: 0 5%;
   line-height: 1.1;
   width: 100%;
+  @media (max-height: 600px) {
+    font-size: 3.5vw;
+  }
+  @media (max-height: 450px) {
+    font-size: 3vw;
+  }
+  @media (max-height: 380px) {
+    font-size: 2.5vw;
+  }
 `;
 
 const PanelText = ({ children, ...rest }) => (

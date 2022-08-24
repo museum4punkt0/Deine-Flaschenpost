@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { global, fadeInUp } from '../../themes/global';
-import { PanelText } from '../panel-text';
-import { PanelRound, PanelRoundBorderStyle } from '../panel-round';
-import { BaseControlButton } from '../buttons';
-import { TextResize } from '../text-resize';
+import { global, fadeInUp } from "../../themes/global";
+import { PanelText } from "../panel-text";
+import { PanelRound, PanelRoundBorderStyle } from "../panel-round";
+import { BaseControlButton } from "../buttons";
+import { TextResize } from "../text-resize";
 
-import SvgIconMicrophone from '../svg/icon-microphone';
+import SvgIconMicrophone from "../svg/icon-microphone";
 
 const AudioRecorderStyle = styled.div`
   color: white;
@@ -39,6 +39,17 @@ const RecordingText = styled.div`
   text-align: center;
   margin-bottom: 10%;
   font-weight: 300;
+  @media (max-height: 450px) {
+    margin-bottom: 2%;
+  }
+`;
+
+const RecordingTextResize = styled(TextResize).attrs<Props>((props) => ({
+  textSize: 40,
+}))`
+  @media (max-height: 450px) {
+    font-size: 3vw;
+  }
 `;
 
 // Buttons
@@ -47,36 +58,48 @@ const RecordButton = styled(BaseControlButton)`
   border-radius: 50%;
 `;
 
-
 interface Props {
-  status: 'idle' | 'preparing' | 'recording' | 'processing' | 'error';
+  status: "idle" | "preparing" | "recording" | "processing" | "error";
   text: string;
   onClick: () => void;
 }
 
 export const AudioRecorder: React.FC<Props> = ({ status, text, onClick }) => {
+  const statusText =
+    status === "recording"
+      ? "Aufnahme läuft"
+      : status === "processing"
+      ? "Verarbeiten"
+      : status === "preparing"
+      ? "Vorbereiten"
+      : status === "error"
+      ? "Fehler"
+      : "";
 
-  const statusText = (status === 'recording') ? 'Aufnahme läuft'
-                   : (status === 'processing') ? 'Verarbeiten'
-                   : (status === 'preparing') ? 'Vorbereiten'
-                   : (status === 'error') ? 'Fehler'
-                   : '';
-
-  const border: PanelRoundBorderStyle = (status === 'recording') ? 'solid-red'
-                                      : (status === 'preparing') ? 'solid-grey'
-                                      : (status === 'processing') ? 'solid-grey'
-                                      : (status === 'error') ? 'solid-grey'
-                                      : 'none';
+  const border: PanelRoundBorderStyle =
+    status === "recording"
+      ? "solid-red"
+      : status === "preparing"
+      ? "solid-grey"
+      : status === "processing"
+      ? "solid-grey"
+      : status === "error"
+      ? "solid-grey"
+      : "none";
 
   return (
-    <PanelRound background={'transparent-black'} border={border} onClick={onClick}>
+    <PanelRound
+      background={"transparent-black"}
+      border={border}
+      onClick={onClick}
+    >
       <AudioRecorderStyle>
         <AudioPanelText>{text}</AudioPanelText>
         <RecordingText>
-          <TextResize textSize={40}>{statusText}</TextResize>
+          <RecordingTextResize textSize={40}>{statusText}</RecordingTextResize>
         </RecordingText>
         <Controls>
-          <RecordButton >
+          <RecordButton>
             <SvgIconMicrophone />
           </RecordButton>
         </Controls>

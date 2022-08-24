@@ -93,6 +93,13 @@ const AccordionTitleStyle = styled.div<AccordionTitleProps>`
       font-style: italic;
     }
   `}
+  @media (max-height: 450px) {
+    font-size: 7vw;
+  }
+  @media (max-height: 400px) {
+    font-size: 6vw;
+    padding-bottom: 2%;
+  }
 `;
 
 const AccordionTitle: React.FC<AccordionTitleProps> = (props) => {

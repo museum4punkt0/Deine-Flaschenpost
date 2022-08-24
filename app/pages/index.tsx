@@ -60,7 +60,14 @@ const MainTitleContainer = styled.div`
   text-align: center;
   font-family: ${global.fonts.title.family};
   font-weight: ${global.fonts.title.bold};
-  margin-top: 3rem;
+  margin-top: 1rem;
+  @media (min-height: 600px) {
+    margin-top: 2rem;
+  }
+  @media (min-height: 700px) {
+    margin-top: 3rem;
+  }
+
   position: relative;
   color: white;
   padding: 0 10px;

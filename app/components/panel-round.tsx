@@ -24,6 +24,23 @@ const PanelRoundStyle = styled.div<Props>`
     height: ${global.components.circle.width.pixels};
     width: ${global.components.circle.width.pixels};
   }
+  @media (max-height: 600px) {
+    height: 55vmin;
+    width: 55vmin;
+  }
+  @media (max-height: 500px) {
+    height: 45vmin;
+    width: 45vmin;
+  }
+  @media (max-height: 450px) {
+    height: 40vmin;
+    width: 40vmin;
+  }
+  @media (max-height: 380px) {
+    height: 35vmin;
+    width: 35vmin;
+  }
+
   padding: ${(props) => props.padding || "5%"};
   margin: 0 auto;
   display: flex;

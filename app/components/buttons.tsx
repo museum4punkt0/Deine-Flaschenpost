@@ -103,6 +103,15 @@ const ButtonStyle = styled.button<ButtonProps>`
   ${buttonStyles};
 `;
 
+// Pass through to TextResize
+const ButtonTextStyle = styled(TextResize).attrs<Props>((props) => ({
+  textSize: 50,
+}))`
+  @media (max-height: 600px) {
+    font-size: 4vw;
+  }
+`;
+
 const Button: React.FC<ButtonProps> = ({
   colour = "white",
   disabled,
@@ -116,7 +125,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       textColor={globalLayout.promptColor}
     >
-      <TextResize textSize={50}>{children}</TextResize>
+      <ButtonTextStyle>{children}</ButtonTextStyle>
     </ButtonStyle>
   );
 };
@@ -155,7 +164,7 @@ const ButtonLink: React.FC<ButtonLinkProps> = ({
         onClick={onClick}
         textColor={globalLayout.promptColor}
       >
-        <TextResize textSize={50}>{children}</TextResize>
+        <ButtonTextStyle>{children}</ButtonTextStyle>
       </ButtonLinkStyle>
     </LinkWrapper>
   );

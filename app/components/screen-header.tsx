@@ -43,7 +43,12 @@ interface ScreenHeaderStyleProps {
 // Header
 const ScreenHeaderStyle = styled.div<ScreenHeaderStyleProps>`
   width: 100%;
-  height: 10rem;
+
+  height: 6rem;
+  @media (min-height: 600px) {
+    height: 10rem;
+  }
+
   position: relative;
   display: flex;
   flex-flow: row-reverse;

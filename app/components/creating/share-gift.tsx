@@ -62,6 +62,22 @@ const ShareLinkIcon = styled.div`
     width: 20%;
     padding-bottom: 20%;
   }
+  @media (max-height: 650px) {
+    width: 15%;
+    padding-bottom: 15%;
+  }
+  @media (max-height: 500px) {
+    width: 10%;
+    padding-bottom: 12.5%;
+  }
+  @media (max-height: 450px) {
+    width: 10%;
+    padding-bottom: 9%;
+  }
+  @media (max-height: 380px) {
+    width: 8%;
+    padding-bottom: 6%;
+  }
   width: 25%;
   padding-bottom: 17.5%;
   position: relative;

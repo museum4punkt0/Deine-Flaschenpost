@@ -44,7 +44,11 @@ export const MainTitleStyle = styled(TextResize).attrs({
   font-weight: ${global.fonts.title.bold};
   line-height: 0.9;
   margin: 2vh 0 0;
+  padding-bottom: 10px;
   color: ${(props) => props.color};
+  @media (max-height: 600px) {
+    font-size: 10vw;
+  }
 `;
 
 const MainTitle = ({ children, ...rest }) => (
