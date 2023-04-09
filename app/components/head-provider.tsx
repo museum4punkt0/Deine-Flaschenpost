@@ -32,6 +32,7 @@ const HeadProvider: React.FC = ({ children }) => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
         <meta property="og:image" content={globalLayout.openGraphImage} />
+        <script type="module" src="https://www.deutsches-meeresmuseum.de/assets/flaschenpost/data-consent.js?v=1"></script>
         <title>{globalLayout.appTitle}</title>
       </Head>
       {children}
