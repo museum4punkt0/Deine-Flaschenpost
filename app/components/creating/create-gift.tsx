@@ -58,7 +58,7 @@ const MainTitle = ({ children, ...rest }) => (
 );
 
 export const SubtitleStyle = styled(TextResize).attrs({
-  textSize: 40,
+  textSize: 55,
 })`
   z-index: 1;
   width: 90%;

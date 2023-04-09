@@ -56,10 +56,6 @@ const global = {
 
 const GlobalStyles = createGlobalStyle`
 
-  /* Fonts */
-  @import url('https://fonts.googleapis.com/css?family=Nunito:300,400');
-  @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&display=swap');
-
   /* Animation keyframes */
   @keyframes fadeInOpacity {
     0% {
