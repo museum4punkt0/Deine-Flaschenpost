@@ -148,4 +148,4 @@ Wir kümmern uns um die TODO's in der Config (insbesondere holen wir uns mit Cer
 In Auftrag gegeben vom Deutschen Meeresmuseum; entwickelt von Tim Weiland. Projektgrundlage von [Blast Theory](https://www.blasttheory.co.uk/).
 
 ## Lizenz
-Der Quellcode steht komplett unter der MIT-Lizens. Sowohl der ursprüngliche Quellcode von Blast Theory ([LICENSE](LICENSE)), als auch der angepasste Quellcode von Tim Weiland ([LICENSE-MODIFIED](LICENSE-MODIFIED)).
+Der Quellcode steht komplett unter der MIT-Lizenz. Sowohl der ursprüngliche Quellcode von Blast Theory ([LICENSE](LICENSE)), als auch der angepasste Quellcode von Tim Weiland ([LICENSE-MODIFIED](LICENSE-MODIFIED)).
