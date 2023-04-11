@@ -23,7 +23,7 @@ Weitere Informationen finden Sie hier:
 - [Das GIFT-Projekt](https://gifting.digital/)
 - [Die GIFT App](https://www.blasttheory.co.uk/projects/gift/)
 
-Das Badische Landesmuseum hat die Anwendung mit Hilfe des Projektteams Creative Collections weiterentwickelt, das aus Johannes Bernhardt, Tilmann Bruhn und Christiane Lindner besteht, sowie der erweiterten Creative-Familie Leilah Jätzold, Danica Schlosser und Tim Weiland. Weitere Details finden Sie [hier.](www.landesmuseum.de/creative)
+Das Badische Landesmuseum hat die Anwendung mit Hilfe des Projektteams Creative Collections weiterentwickelt, das aus Johannes Bernhardt, Tilmann Bruhn und Christiane Lindner besteht, sowie der erweiterten Creative-Familie Leilah Jätzold, Danica Schlosser und Tim Weiland. Weitere Details finden Sie [hier.](https://www.landesmuseum.de/creative)
 
 Das Projekt ,,Deine Flaschenpost" entstand wiederum als Weiterentwicklung der Anwendung des Badischen Landesmuseums. Die grundlegendste Neuerung ist das CMS, welches es Museen erlaubt, Designelemente anzupassen, ohne Änderungen am Code vornehmen zu müssen. Um dies zu ermöglichen, wurde das Frontend mit next.js neu implementiert.
 
