@@ -91,6 +91,14 @@ Wir kümmern uns um die TODO's in der Config (insbesondere holen wir uns mit Cer
 - Wir erstellen einen neuen Benutzer unter Identity -> Users und geben ihm die Policies `readwrite` und `consoleAdmin`. Den Standard-Benutzer löschen wir.
 - Wir erstellen einen neuen Bucket und geben ihm die Access Policy public. Bei Access rules erstellen wir eine Regel mit Access readwrite und leerem Prefix.
 
+### Domain für Bilder ändern
+In der Datei `app/next.config.js` ändern wir
+```
+images: {
+    domains: ["localhost"],
+}
+```
+so ab, dass statt `localhost` unsere eigene Domain verwendet wird - z.B. `flaschenpost.deutsches-meeresmuseum.de`.
 
 ### Deployment
 1. Wir installieren alle Anforderungen
