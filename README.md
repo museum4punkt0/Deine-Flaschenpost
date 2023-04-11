@@ -23,7 +23,7 @@ Weitere Informationen finden Sie hier:
 - [Das GIFT-Projekt](https://gifting.digital/)
 - [Die GIFT App](https://www.blasttheory.co.uk/projects/gift/)
 
-Das Badische Landesmuseum hat die Anwendung mit Hilfe des Projektteams Creative Collections weiterentwickelt, das aus Johannes Bernhardt, Tilmann Bruhn und Christiane Lindner besteht, sowie der erweiterten Creative-Familie Leilah Jätzold, Danica Schlosser und Tim Weiland. Weitere Details finden Sie unter <www.landesmuseum.de/creative>.
+Das Badische Landesmuseum hat die Anwendung mit Hilfe des Projektteams Creative Collections weiterentwickelt, das aus Johannes Bernhardt, Tilmann Bruhn und Christiane Lindner besteht, sowie der erweiterten Creative-Familie Leilah Jätzold, Danica Schlosser und Tim Weiland. Weitere Details finden Sie [hier.](www.landesmuseum.de/creative)
 
 Das Projekt ,,Deine Flaschenpost" entstand wiederum als Weiterentwicklung der Anwendung des Badischen Landesmuseums. Die grundlegendste Neuerung ist das CMS, welches es Museen erlaubt, Designelemente anzupassen, ohne Änderungen am Code vornehmen zu müssen. Um dies zu ermöglichen, wurde das Frontend mit next.js neu implementiert.
 
@@ -51,8 +51,8 @@ Das Projekt ,,Deine Flaschenpost" entstand wiederum als Weiterentwicklung der An
 ### PostgreSQL Database Setup
 Zunächst führen wir psql aus:
 ```bash
-    sudo su - postgres
-    psql
+sudo su - postgres
+psql
 ```
 Jetzt gibt es drei Sachen, die wir machen müssen.
 
@@ -65,15 +65,15 @@ create database gift;
 #### Einen Benutzer erstellen
 Wir erstellen den Benutzer, stellen sicher, dass er in der Liste aller Benutzer erscheint, und setzen dann ein Passwort:
 ```bash
-    create user gift;
-    \du
-    \password gift;
+create user gift;
+\du
+\password gift;
 ```
 #### Dem Benutzer Datenbank-Priviligien zuteilen
 Wir setzen unseren neuen Benutzer als Besitzer unserer Datenbank und teilen ihm alle Privilegien zu:
 ```bash
-    grant all privileges on database gift to gift;
-    alter database gift owner to gift;
+grant all privileges on database gift to gift;
+alter database gift owner to gift;
 ```
 ### Nginx Setup
 Wenn wir die App, das API, das CMS und MinIO alle auf dem gleichen Server laufen lassen wollen, brauchen wir Nginx. Im Quellverzeichnis dieses Repositories befindet sich eine Beispiel-Config namens `example_nginx.conf`.
@@ -99,12 +99,12 @@ Wir kümmern uns um die TODO's in der Config (insbesondere holen wir uns mit Cer
     - Wir folgen den Schritten im Minio-Setup
 2. Abhängigkeiten installieren
     ```bash
-        cd api
-        yarn install
-        cd ../app
-        npm install
-        cd ../cms
-        npm install
+    cd api
+    yarn install
+    cd ../app
+    npm install
+    cd ../cms
+    npm install
     ```
 3. Wir konfigurieren die Environment-Variablen:
     In den Unterordnern `api`, `app` und `cms` befindet sich jeweils eine Datei `deployment_example.env`. Wir kopieren diese Datei zu `.env` und kümmern uns um die TODO's, die selbsterklärend sein sollten.
@@ -113,14 +113,14 @@ Wir kümmern uns um die TODO's in der Config (insbesondere holen wir uns mit Cer
     - Ich empfehle die Benutzung vom Prozessmanager `pm2` (installierbar via `npm install pm2 -g`)
     - Wir starten MinIO
         ```bash
-            cd minio
-            pm2 start run.sh --name "minio"
+        cd minio
+        pm2 start run.sh --name "minio"
         ```
     - Wir starten das CMS
         ```bash
-            cd cms
-            npm run build
-            pm2 start npm --name "app" -- run start
+        cd cms
+        npm run build
+        pm2 start npm --name "app" -- run start
         ```
     - Wir starten das API
         ```bash
