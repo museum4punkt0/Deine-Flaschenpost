@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_create_gift_outros",
+  "info": {
+    "name": "Screen: Create Gift - Outro",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "doneButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "thanksMessage": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

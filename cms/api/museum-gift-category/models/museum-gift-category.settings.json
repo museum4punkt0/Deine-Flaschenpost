@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "museum_gift_categories",
+  "info": {
+    "name": "MuseumGiftCategory",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "museum_gifts": {
+      "via": "museum_gift_categories",
+      "collection": "museum-gift"
+    }
+  }
+}

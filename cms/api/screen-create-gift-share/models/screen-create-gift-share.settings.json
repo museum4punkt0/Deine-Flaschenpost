@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_create_gift_shares",
+  "info": {
+    "name": "Screen: Create Gift - Share",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "shareText": {
+      "type": "text",
+      "required": true
+    },
+    "emailSubject": {
+      "type": "string",
+      "required": true
+    },
+    "emailBody": {
+      "type": "text",
+      "required": true
+    },
+    "feedbackUrl": {
+      "type": "string",
+      "required": false
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "continueButtonText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

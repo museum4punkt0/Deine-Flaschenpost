@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_home_new_gifts",
+  "info": {
+    "name": "Screen: Home - New Gift"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "giftReceivedText": {
+      "type": "string",
+      "required": true
+    },
+    "createGiftText": {
+      "type": "string",
+      "required": true
+    },
+    "openGiftText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

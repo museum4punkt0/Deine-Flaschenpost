@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/screen-receive-gift-status",
+      "handler": "screen-receive-gift-status.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/screen-receive-gift-status",
+      "handler": "screen-receive-gift-status.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/screen-receive-gift-status",
+      "handler": "screen-receive-gift-status.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "menu_items",
+  "info": {
+    "name": "Menu Items",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "menuItemZone": {
+      "type": "dynamiczone",
+      "components": [
+        "menu.richtext-menu-item",
+        "menu.link-menu-item"
+      ]
+    },
+    "helpTextTitle": {
+      "type": "string",
+      "default": "Hilfe",
+      "required": true
+    }
+  }
+}

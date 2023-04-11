@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_menu_richtext_menu_items",
+  "info": {
+    "name": "richtextMenuItem",
+    "icon": "envelope-open-text"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "minLength": 1,
+      "maxLength": 30
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_create_gift_choose_recipients",
+  "info": {
+    "name": "Screen: Create Gift - Choose Recipient",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "audioMessage": {
+      "type": "string",
+      "required": true
+    },
+    "enterNameMessage": {
+      "type": "string",
+      "required": true
+    },
+    "textInputPlaceholder": {
+      "type": "string",
+      "required": true
+    },
+    "audio": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "audioTranscript": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

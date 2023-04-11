@@ -1,0 +1,64 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_create_gift_saves",
+  "info": {
+    "name": "Screen: Create Gift - Save",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uploadingText": {
+      "type": "string",
+      "required": true
+    },
+    "processingText": {
+      "type": "string",
+      "required": true
+    },
+    "uploadFailedUnrecoverableText": {
+      "type": "string",
+      "required": true
+    },
+    "uploadFailedCheckConnectionText": {
+      "type": "string",
+      "required": true
+    },
+    "uploadFailedText": {
+      "type": "string",
+      "required": true
+    },
+    "checkConnectionText": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "savingInProgressSubTitle": {
+      "type": "string",
+      "required": true
+    },
+    "savingFailedSubTitle": {
+      "type": "string",
+      "required": true
+    },
+    "savingFailedUnrecoverableSubTitle": {
+      "type": "string",
+      "required": true
+    },
+    "startButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "tryAgainButtonText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

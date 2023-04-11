@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/gift-shelf",
+      "handler": "gift-shelf.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/gift-shelf",
+      "handler": "gift-shelf.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/gift-shelf",
+      "handler": "gift-shelf.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

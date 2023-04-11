@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_home_intro_1s",
+  "info": {
+    "name": "Screen: Home - Intro 1"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "introText": {
+      "type": "string",
+      "required": true
+    },
+    "continueText": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    }
+  }
+}

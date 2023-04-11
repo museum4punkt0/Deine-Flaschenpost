@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "gift_shelves",
+  "info": {
+    "name": "Gift Shelf",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "museum_gift_categories": {
+      "collection": "museum-gift-category"
+    }
+  }
+}

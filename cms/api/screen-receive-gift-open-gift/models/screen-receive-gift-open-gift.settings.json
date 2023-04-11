@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_receive_gift_open_gifts",
+  "info": {
+    "name": "Screen: Receive Gift - Open Gift",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "openButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "giftIcon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    }
+  }
+}

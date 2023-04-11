@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/screen-home-intro-2",
+      "handler": "screen-home-intro-2.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/screen-home-intro-2",
+      "handler": "screen-home-intro-2.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/screen-home-intro-2",
+      "handler": "screen-home-intro-2.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

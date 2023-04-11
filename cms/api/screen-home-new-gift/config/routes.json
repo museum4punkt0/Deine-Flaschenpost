@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/screen-home-new-gift",
+      "handler": "screen-home-new-gift.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/screen-home-new-gift",
+      "handler": "screen-home-new-gift.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/screen-home-new-gift",
+      "handler": "screen-home-new-gift.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

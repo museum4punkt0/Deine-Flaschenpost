@@ -1,0 +1,250 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_create_gift_parts",
+  "info": {
+    "name": "Screen: Create Gift - Parts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "introText": {
+      "type": "text",
+      "required": true
+    },
+    "firstPartIntroText": {
+      "type": "text",
+      "required": true
+    },
+    "secondPartIntroText": {
+      "type": "text",
+      "required": true
+    },
+    "thirdPartIntroText": {
+      "type": "text",
+      "required": true
+    },
+    "firstPartIntroAudio": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "secondPartIntroAudio": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "thirdPartIntroAudio": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "firstPartIntroAudioTranscript": {
+      "type": "richtext",
+      "required": true
+    },
+    "secondPartIntroAudioTranscript": {
+      "type": "richtext",
+      "required": true
+    },
+    "thirdPartIntroAudioTranscript": {
+      "type": "richtext",
+      "required": true
+    },
+    "introContinueButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "firstPartTakePhotoText": {
+      "type": "text",
+      "required": true
+    },
+    "secondPartTakePhotoText": {
+      "type": "text",
+      "required": true
+    },
+    "thirdPartTakePhotoText": {
+      "type": "text",
+      "required": true
+    },
+    "openCameraButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "firstPartPreRecordText": {
+      "type": "text",
+      "required": true
+    },
+    "secondPartPreRecordText": {
+      "type": "text",
+      "required": true
+    },
+    "thirdPartPreRecordText": {
+      "type": "text",
+      "required": true
+    },
+    "firstPartPreRecordAudio": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "secondPartPreRecordAudio": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "thirdPartPreRecordAudio": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "firstPartPreRecordAudioTranscript": {
+      "type": "richtext",
+      "required": true
+    },
+    "secondPartPreRecordAudioTranscript": {
+      "type": "richtext",
+      "required": true
+    },
+    "thirdPartPreRecordAudioTranscript": {
+      "type": "richtext",
+      "required": true
+    },
+    "firstPartRecordText": {
+      "type": "string",
+      "required": true
+    },
+    "secondPartRecordText": {
+      "type": "string",
+      "required": true
+    },
+    "thirdPartRecordText": {
+      "type": "string",
+      "required": true
+    },
+    "recordPlaybackText": {
+      "type": "string",
+      "required": true
+    },
+    "recordSaveButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "startRecordingButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "checkHeadphonesText": {
+      "type": "text",
+      "required": true
+    },
+    "helpText": {
+      "type": "string",
+      "required": true
+    },
+    "checkHeadphonesConfirmText": {
+      "type": "string",
+      "required": true
+    },
+    "clueIntroText": {
+      "type": "text",
+      "required": true
+    },
+    "firstPartPreClueText": {
+      "type": "text",
+      "required": true
+    },
+    "secondPartPreClueText": {
+      "type": "text",
+      "required": true
+    },
+    "thirdPartPreClueText": {
+      "type": "text",
+      "required": true
+    },
+    "skipText": {
+      "type": "string",
+      "required": true
+    },
+    "writeHintButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "firstPartFinishTextOne": {
+      "type": "text",
+      "required": true
+    },
+    "firstPartFinishTextTwo": {
+      "type": "text",
+      "required": true
+    },
+    "secondPartFinishText": {
+      "type": "text",
+      "required": true
+    },
+    "thirdPartFinishText": {
+      "type": "text",
+      "required": true
+    },
+    "firstPartSendOrAddMoreText": {
+      "type": "text",
+      "required": true
+    },
+    "secondPartSendOrAddMoreText": {
+      "type": "text",
+      "required": true
+    },
+    "sendNowButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "addObjectButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "hintInputPlaceholder": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

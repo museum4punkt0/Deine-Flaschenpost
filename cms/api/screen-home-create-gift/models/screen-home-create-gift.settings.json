@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_home_create_gifts",
+  "info": {
+    "name": "Screen: Home - Create Gift",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "createText": {
+      "type": "string",
+      "required": true
+    },
+    "moreText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

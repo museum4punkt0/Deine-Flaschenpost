@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_receive_gift_open_or_saves",
+  "info": {
+    "name": "Screen: Receive Gift - Open or Save"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "questionText": {
+      "type": "string",
+      "required": true
+    },
+    "openNowText": {
+      "type": "string",
+      "required": true
+    },
+    "saveForLaterText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

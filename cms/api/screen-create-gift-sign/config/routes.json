@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/screen-create-gift-sign",
+      "handler": "screen-create-gift-sign.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/screen-create-gift-sign",
+      "handler": "screen-create-gift-sign.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/screen-create-gift-sign",
+      "handler": "screen-create-gift-sign.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

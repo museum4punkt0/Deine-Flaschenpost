@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/screen-receive-gift-global",
+      "handler": "screen-receive-gift-global.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/screen-receive-gift-global",
+      "handler": "screen-receive-gift-global.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/screen-receive-gift-global",
+      "handler": "screen-receive-gift-global.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

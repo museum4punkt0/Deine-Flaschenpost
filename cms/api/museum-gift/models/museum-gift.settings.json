@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "museum_gifts",
+  "info": {
+    "name": "MuseumGift",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": false,
+      "private": true
+    },
+    "parts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "gift.gift-part",
+      "max": 3,
+      "min": 1,
+      "required": true
+    },
+    "senderName": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "museum_gift_categories": {
+      "collection": "museum-gift-category",
+      "via": "museum_gifts",
+      "dominant": true
+    },
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

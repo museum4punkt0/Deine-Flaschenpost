@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_create_gift_signs",
+  "info": {
+    "name": "Screen: Create Gift - Sign"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "promptText": {
+      "type": "text",
+      "required": true
+    },
+    "writeNameButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "writeNameInputPlaceholder": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

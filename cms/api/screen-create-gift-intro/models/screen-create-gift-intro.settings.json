@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_create_gift_intros",
+  "info": {
+    "name": "Screen: Create Gift - Intro"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstMessage": {
+      "type": "text",
+      "required": true
+    },
+    "secondMessage": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

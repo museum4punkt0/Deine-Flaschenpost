@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/museum-gifts",
+      "handler": "museum-gift.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/museum-gifts/count",
+      "handler": "museum-gift.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/museum-gifts/:id",
+      "handler": "museum-gift.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/museum-gifts",
+      "handler": "museum-gift.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/museum-gifts/:id",
+      "handler": "museum-gift.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/museum-gifts/:id",
+      "handler": "museum-gift.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

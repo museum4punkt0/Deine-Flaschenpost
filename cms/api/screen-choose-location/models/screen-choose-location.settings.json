@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_choose_locations",
+  "info": {
+    "name": "Screen: Choose Location"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "inMuseumQuestionText": {
+      "type": "string",
+      "required": true
+    },
+    "noButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "yesButtonText": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

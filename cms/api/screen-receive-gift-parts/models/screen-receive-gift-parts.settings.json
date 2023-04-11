@@ -1,0 +1,259 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_receive_gift_parts",
+  "info": {
+    "name": "Screen: Receive Gift - Parts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "partText": {
+      "type": "string",
+      "required": true
+    },
+    "introMessage": {
+      "type": "string",
+      "required": true
+    },
+    "introAudioAtMuseumMuseumGift": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "introAudioAtMuseumPersonalGift": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "introAudioNotAtMuseumMuseumGift": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "introAudioNotAtMuseumPersonalGift": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "introAudioTranscriptionAtMuseumMuseumGift": {
+      "type": "richtext",
+      "required": true
+    },
+    "introAudioTranscriptionAtMuseumPersonalGift": {
+      "type": "richtext",
+      "required": true
+    },
+    "introAudioTranscriptionNotAtMuseumMuseumGift": {
+      "type": "richtext",
+      "required": true
+    },
+    "introAudioTranscriptionNotAtMuseumPersonalGift": {
+      "type": "richtext"
+    },
+    "continueButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "okButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "clueButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "helpButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "moreHelpButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "foundButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "doneButtonText": {
+      "type": "string",
+      "required": true
+    },
+    "openPartTwoText": {
+      "type": "string",
+      "required": true
+    },
+    "openLastPartText": {
+      "type": "string",
+      "required": true
+    },
+    "previewTextPartOneSingleAtMuseum": {
+      "type": "text",
+      "required": true
+    },
+    "previewTextPartOneMultiAtMuseum": {
+      "type": "text",
+      "required": true
+    },
+    "previewTextPartTwoAtMuseum": {
+      "type": "text",
+      "required": true
+    },
+    "previewTextPartThreeAtMuseum": {
+      "type": "text",
+      "required": true
+    },
+    "previewTextPartOneSingleNotAtMuseum": {
+      "type": "text",
+      "required": true
+    },
+    "previewTextPartOneMultiNotAtMuseum": {
+      "type": "text",
+      "required": true
+    },
+    "previewTextPartTwoNotAtMuseum": {
+      "type": "text",
+      "required": true
+    },
+    "previewTextPartThreeNotAtMuseum": {
+      "type": "text",
+      "required": true
+    },
+    "needHelpTextPartOne": {
+      "type": "text",
+      "required": true
+    },
+    "needHelpTextPartTwo": {
+      "type": "text",
+      "required": true
+    },
+    "needHelpTextPartThree": {
+      "type": "text",
+      "required": true
+    },
+    "preFindTextPartOne": {
+      "type": "text",
+      "required": true
+    },
+    "preFindTextPartTwo": {
+      "type": "text",
+      "required": true
+    },
+    "preFindTextPartThree": {
+      "type": "text",
+      "required": true
+    },
+    "playSendersMsgTextPartOneSingle": {
+      "type": "text",
+      "required": true
+    },
+    "playSendersMsgTextPartOneMulti": {
+      "type": "text",
+      "required": true
+    },
+    "playSendersMsgTextPartTwo": {
+      "type": "text",
+      "required": true
+    },
+    "playSendersMsgTextPartThree": {
+      "type": "text",
+      "required": true
+    },
+    "unwrappedText": {
+      "type": "string",
+      "required": true
+    },
+    "preOutroText": {
+      "type": "string",
+      "required": true
+    },
+    "outroAudioAtMuseumMuseumGift": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "outroAudioAtMuseumPersonalGift": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "outroAudioNotAtMuseumMuseumGift": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "outroAudioNotAtMuseumPersonalGift": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "outroAudioTranscriptAtMuseumMuseumGift": {
+      "type": "richtext",
+      "required": true
+    },
+    "outroAudioTranscriptAtMuseumPersonalGift": {
+      "type": "richtext",
+      "required": true
+    },
+    "outroAudioTranscriptNotAtMuseumMuseumGift": {
+      "type": "richtext",
+      "required": true
+    },
+    "outroAudioTranscriptNotAtMuseumPersonalGift": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

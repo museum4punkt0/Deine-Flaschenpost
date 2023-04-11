@@ -1,0 +1,76 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_home_mores",
+  "info": {
+    "name": "Screen: Home - More",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headerMessage": {
+      "type": "text",
+      "required": true
+    },
+    "readMoreText": {
+      "type": "string",
+      "required": true
+    },
+    "addText": {
+      "type": "string",
+      "required": true
+    },
+    "openMuseumGiftText": {
+      "type": "string",
+      "required": true
+    },
+    "feedbackUrl": {
+      "type": "string",
+      "required": false
+    },
+    "feedbackText": {
+      "type": "string",
+      "required": false
+    },
+    "textColor": {
+      "model": "color"
+    },
+    "giftShelfText": {
+      "type": "string"
+    },
+    "addImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "openMuseumGiftImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "feedbackImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    }
+  }
+}

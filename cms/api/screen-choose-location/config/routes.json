@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/screen-choose-location",
+      "handler": "screen-choose-location.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/screen-choose-location",
+      "handler": "screen-choose-location.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/screen-choose-location",
+      "handler": "screen-choose-location.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

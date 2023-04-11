@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/museum-gift-categories",
+      "handler": "museum-gift-category.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/museum-gift-categories/count",
+      "handler": "museum-gift-category.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/museum-gift-categories/:id",
+      "handler": "museum-gift-category.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/museum-gift-categories",
+      "handler": "museum-gift-category.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/museum-gift-categories/:id",
+      "handler": "museum-gift-category.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/museum-gift-categories/:id",
+      "handler": "museum-gift-category.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

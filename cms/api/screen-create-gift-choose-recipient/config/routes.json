@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/screen-create-gift-choose-recipient",
+      "handler": "screen-create-gift-choose-recipient.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/screen-create-gift-choose-recipient",
+      "handler": "screen-create-gift-choose-recipient.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/screen-create-gift-choose-recipient",
+      "handler": "screen-create-gift-choose-recipient.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

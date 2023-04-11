@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/screen-create-gift-share",
+      "handler": "screen-create-gift-share.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/screen-create-gift-share",
+      "handler": "screen-create-gift-share.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/screen-create-gift-share",
+      "handler": "screen-create-gift-share.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

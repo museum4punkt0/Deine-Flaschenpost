@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_receive_gifts",
+  "info": {
+    "name": "Screen: Receive Gift"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "compactTitle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

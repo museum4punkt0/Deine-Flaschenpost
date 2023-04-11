@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "screen_receive_gift_statuses",
+  "info": {
+    "name": "Screen: Receive Gift - Status"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "loadingMessage": {
+      "type": "string",
+      "required": true
+    },
+    "notFoundMessage": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
