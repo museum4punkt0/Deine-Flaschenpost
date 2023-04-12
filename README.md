@@ -128,7 +128,7 @@ so ab, dass statt `localhost` unsere eigene Domain verwendet wird - z.B. `flasch
         ```bash
         cd cms
         npm run build
-        pm2 start npm --name "app" -- run start
+        pm2 start npm --name "cms" -- run start
         ```
     - Wir starten das API
         ```bash
