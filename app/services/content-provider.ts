@@ -25,6 +25,7 @@ function transformGlobalLayout(data) {
   const mediaKeys = [
     "favicon16x16",
     "favicon32x32",
+    "favicon48x48",
     "appleTouchIcon",
     "openGraphImage",
     "museumLogoSvg",

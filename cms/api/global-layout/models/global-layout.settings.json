@@ -239,6 +239,16 @@
       "plugin": "upload",
       "required": true,
       "pluginOptions": {}
+    },
+    "favicon48x48": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
     }
   }
 }
