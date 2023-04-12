@@ -19,8 +19,8 @@ const HeadProvider: React.FC = ({ children }) => {
         <link
           rel="icon"
           type="image/png"
-          sizes="32x32"
-          href={globalLayout.favicon32x32}
+          sizes="48x48"
+          href={globalLayout.favicon48x48}
         />
         <link
           rel="icon"
@@ -32,7 +32,7 @@ const HeadProvider: React.FC = ({ children }) => {
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href={globalLayout.favicon48x48}
+          href={globalLayout.favicon16x16}
         />
         <link rel="stylesheet" href="https://use.typekit.net/ajv1qmr.css" />
         <meta name="msapplication-TileColor" content="#da532c" />
